@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
-class StackBlock extends StatelessWidget {
-  final String title;
+class SocialMediaBlock extends StatelessWidget {
+  final Icon icon;
   final Widget screen;
   final Color blockColor;
-  final Color textColor;
+  final Color iconColor;
 
-  const StackBlock({super.key, required this.title, required this.screen, required this.blockColor, required this.textColor});
+  const SocialMediaBlock({
+    super.key, 
+    required this.icon, 
+    required this.screen, 
+    required this.blockColor, 
+    required this.iconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,15 +22,15 @@ class StackBlock extends StatelessWidget {
       },
       child: SizedBox(
         height: 100,
-        width: 250,
+        width: 100,
         child: Stack(
           children: [
             Positioned(
               left: 10,
               top: 20,
               child: Container(
-                height: 58,
-                width: 218,
+                height: 38,
+                width: 58,
                 color: Colors.black,
               ),
             ),
@@ -32,8 +38,8 @@ class StackBlock extends StatelessWidget {
               left: 15,
               top: 15,
               child: Container(
-                height: 58,
-                width: 218,
+                height: 38,
+                width: 58,
                 color: Colors.black,
               ),
             ),
@@ -41,17 +47,14 @@ class StackBlock extends StatelessWidget {
               left: 20,
               top: 10,
               child: Container(
-                height: 58,
-                width: 218,
+                height: 38,
+                width: 58,
                 decoration: BoxDecoration(
                   color: blockColor,
                   border: Border.all(width: 2, color: Colors.black),
                 ),
                 child: Center(
-                  child: Text(
-                    title,
-                    style: TextStyle(fontSize: 16,color: textColor),
-                  ),
+                  child: icon,
                 ),
               ),
             ),
