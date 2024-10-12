@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:swish/Components/dummy.dart';
-import 'package:swish/Components/social_media_block.dart';
-import 'package:swish/Components/stack_block.dart';
+import 'package:swish/Components/Blocks/social_media_block.dart';
+import 'package:swish/Components/Blocks/stack_block.dart';
+import 'package:swish/Screens/numpad_screen.dart';
 import 'package:swish/Theme/color.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -29,7 +28,7 @@ class SignInScreen extends StatelessWidget {
             ),
             StackBlock(title: 'Continue with gmail', screen: const SignInScreen(), blockColor: splashScreen, textColor: Colors.white),
             const SizedBox(height: 20),
-            StackBlock(title: 'Use Phone Number', screen: const SignInScreen(), blockColor: Colors.white, textColor: splashScreen),
+            StackBlock(title: 'Use Phone Number', screen: const NumpadScreen(), blockColor: Colors.white, textColor: splashScreen),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -42,9 +41,7 @@ class SignInScreen extends StatelessWidget {
                 SocialMediaBlock(icon: const Icon(Icons.home), screen: const Dummy(), blockColor: Colors.white, iconColor: splashScreen),
               ],
             ),
-
             const SizedBox(height: 20),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -56,7 +53,7 @@ class SignInScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(width: 10),
+                const SizedBox(width: 20),
                 Text(
                   'Privacy Policy',
                   style: TextStyle(

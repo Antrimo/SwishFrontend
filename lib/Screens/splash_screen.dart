@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swish/Screens/sign_in_screen.dart';
 import 'package:swish/Theme/color.dart';
-import 'package:swish/Components/stack_block.dart';
+import 'package:swish/Components/Blocks/stack_block.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
