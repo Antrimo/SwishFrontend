@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:swish/Screens/sign_in_screen.dart';
 import 'package:swish/Theme/color.dart';
+import 'package:swish/Components/Blocks/stack_block.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -35,51 +37,11 @@ class SplashScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-            SizedBox(
-              height: 100,
-              width: 250, 
-              child: Stack(
-                children: [
-                  Positioned(
-                    left: 10,
-                    top: 20,
-                    child: Container(
-                      height: 58,
-                      width: 218,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Positioned(
-                    left: 15,   
-                    top: 15,   
-                    child: Container(
-                      height: 58,
-                      width: 218,
-                      color: Colors.black,
-                    ),
-                  ),
-                  
-                  Positioned(
-                    left: 20, 
-                    top: 10,  
-                    child: Container(
-                      height: 58,
-                      width: 218,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 2, color: Colors.black),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Let's Get Started",
-                          style: TextStyle(fontSize: 16),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            const StackBlock(
+              blockColor: Colors.white,
+              textColor: Colors.black,
+              title: "Let's Get Started",
+              screen: SignInScreen()
             ),
           ],
         ),
@@ -87,3 +49,5 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
+
+
