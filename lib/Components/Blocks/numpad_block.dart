@@ -60,59 +60,59 @@ class NumpadBlock extends StatelessWidget {
           ),
         ),
         SizedBox(
-  height: 100,
-  width: 230,
-  child: Stack(
-    children: [
-      Positioned(
-        left: 10,
-        top: 20,
-        child: Container(
-          height: 58,
-          width: 200,
-          color: Colors.black,
-        ),
-      ),
-      Positioned(
-        left: 15,
-        top: 15,
-        child: Container(
-          height: 58,
-          width: 200,
-          color: Colors.black,
-        ),
-      ),
-      Positioned(
-        left: 20,
-        top: 10,
-        child: Container(
-          height: 58,
-          width: 200,
-          decoration: BoxDecoration(
-            color: blockColor,
-            border: Border.all(width: 2, color: Colors.black),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 18.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: TextField(
-                controller: TextEditingController(),
-                decoration: InputDecoration(     
-                  border: InputBorder.none,
-                  hintText: '000000000', 
-                  hintStyle: TextStyle(fontSize: 16, color: splashScreen),
+          height: 100,
+          width: 230,
+          child: Stack(
+            children: [
+              Positioned(
+                left: 10,
+                top: 20,
+                child: Container(
+                  height: 58,
+                  width: 200,
+                  color: Colors.black,
                 ),
-                style: TextStyle(fontSize: 16, color: textColor),
               ),
-            ),
+              Positioned(
+                left: 15,
+                top: 15,
+                child: Container(
+                  height: 58,
+                  width: 200,
+                  color: Colors.black,
+                ),
+              ),
+              Positioned(
+                left: 20,
+                top: 10,
+                child: Container(
+                  height: 58,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    color: blockColor,
+                    border: Border.all(width: 2, color: Colors.black),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextField(
+                        keyboardType: TextInputType.number,
+                        controller: TextEditingController(),
+                        decoration: InputDecoration(     
+                          border: InputBorder.none,
+                          hintText: '000000000', 
+                          hintStyle: TextStyle(fontSize: 16, color: splashScreen),
+                        ),
+                        style: TextStyle(fontSize: 16, color: textColor),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-      ),
-    ],
-  ),
-)
-
+        )
       ],
     );
   }

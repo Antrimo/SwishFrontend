@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:swish/Components/Blocks/numpad_block.dart';
+import 'package:swish/Components/Blocks/code_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
-import 'package:swish/Screens/enter_code_screen.dart';
+import 'package:swish/Screens/upload_pic_screen.dart';
 import 'package:swish/Theme/color.dart';
 
-class NumpadScreen extends StatelessWidget {
-  const NumpadScreen({super.key});
+class EnterCodeScreen extends StatelessWidget {
+  const EnterCodeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 40, top: 70),
+      body:  Padding(
+        padding: const EdgeInsets.only(left: 15.0,top: 70),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const Padding(
-              padding: EdgeInsets.only(left: 15), // Shift text to the right
+              padding: EdgeInsets.only(left: 16), 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'What\'s your \nnumber?',
+                    'Enter Your\nCode',
                     style: TextStyle(
                       fontSize: 36,
                       fontWeight: FontWeight.w600,
@@ -30,7 +30,7 @@ class NumpadScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 10),
                   Text(
-                    'Please enter your valid phone number.\nWe will send you 4 digit code to verify your\naccount',
+                    'Enter the 4-digit Code we have sent to you \nat +91 000 000 0000',
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.w400,
@@ -40,15 +40,17 @@ class NumpadScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            NumpadBlock(
-              blockColor: Colors.white,
-              textColor: splashScreen,
-              phoneNumber: '6307195977',
-              countryCode: '+91',
+            Row(
+              children: [
+                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+              ],
             ),
             const SizedBox(height: 20),
+            Center(child: StackBlock(title: 'Continue', screen: const UploadPicScreen(), blockColor: splashScreen, textColor: Colors.white)),
             
-            Center(child: StackBlock(title: 'Continue', screen: const EnterCodeScreen(), blockColor: splashScreen, textColor: Colors.white)),
           ],
         ),
       ),
