@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:swish/Auth/auth.dart';
 import 'package:swish/Components/dummy.dart';
 import 'package:swish/Components/Blocks/social_media_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
 import 'package:swish/Screens/numpad_screen.dart';
 import 'package:swish/Theme/color.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+
+  final googleSignProvider = GoogleSignIn();
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +36,10 @@ class SignInScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            StackBlock(title: 'Continue with gmail', screen: const SignInScreen(), blockColor: splashScreen, textColor: Colors.white),
+            StackBlock(title: 'Continue with gmail', screen: const Dummy(), blockColor: splashScreen, textColor: Colors.white, isAuth: true,),
+            
             const SizedBox(height: 20),
-            StackBlock(title: 'Use Phone Number', screen: const NumpadScreen(), blockColor: Colors.white, textColor: splashScreen),
+            StackBlock(title: 'Use Phone Number', screen: const NumpadScreen(), blockColor: Colors.white, textColor: splashScreen, isAuth: false,),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

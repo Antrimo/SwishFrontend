@@ -38,7 +38,7 @@ class UploadPicScreen extends StatelessWidget {
               title: 'What should we call you?',
               screen: const UploadPicScreen(),
               blockColor: splashScreen,
-              textColor: Colors.white,
+              textColor: Colors.white, isAuth: false,
             ),
           ),
           
