@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "923840009509-clbra3q8p8arcvrs0oepq2a1a0610nah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swish.app",
+            "certificate_hash": "63ab1501334d4759a024883dbb1759644eaec2ef"
+          }
+        },
+        {
           "client_id": "923840009509-ornn8b44tvc343brn6v2gferaon9eo3e.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "923840009509-ornn8b44tvc343brn6v2gferaon9eo3e.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "923840009509-ebo3beedv577cit1dhh6lg9vid0q91j7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.swish"
+              }
             }
           ]
         }
