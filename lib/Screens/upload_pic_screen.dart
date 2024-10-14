@@ -41,10 +41,12 @@ class UploadPicScreen extends StatelessWidget {
               textColor: Colors.white,
             ),
           ),
+          
           const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('Add 2 more shots!'),
+              SizedBox(width: 5),
               Icon(Icons.camera_enhance),
             ],
           )

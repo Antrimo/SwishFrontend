@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "923840009509",
+    "project_id": "swishdating-80a72",
+    "storage_bucket": "swishdating-80a72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923840009509:android:9b6b372c293e1b5f2df6cc",
+        "android_client_info": {
+          "package_name": "com.swish.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923840009509-ornn8b44tvc343brn6v2gferaon9eo3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsgzllkHTD1jEnKjsN-PwW5T7KHyKZJcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923840009509-ornn8b44tvc343brn6v2gferaon9eo3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
