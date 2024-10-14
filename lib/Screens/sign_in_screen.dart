@@ -36,18 +36,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            // StackBlock(title: 'Continue with gmail', screen: const FirebaseHome(), blockColor: splashScreen, textColor: Colors.white),
-            ElevatedButton(
-              onPressed: () async {
-                final user = await Auth().loginwithGoogle();
-                if (user != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Dummy()));
-                }
-              },
-              child: const Text("Sign in with Google"),
-              ),
+            StackBlock(title: 'Continue with gmail', screen: const Dummy(), blockColor: splashScreen, textColor: Colors.white, isAuth: true,),
+            
             const SizedBox(height: 20),
-            StackBlock(title: 'Use Phone Number', screen: const NumpadScreen(), blockColor: Colors.white, textColor: splashScreen),
+            StackBlock(title: 'Use Phone Number', screen: const NumpadScreen(), blockColor: Colors.white, textColor: splashScreen, isAuth: false,),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

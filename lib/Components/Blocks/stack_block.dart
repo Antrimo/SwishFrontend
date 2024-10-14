@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:swish/Auth/auth.dart';
 
 class StackBlock extends StatelessWidget {
   final String title;
   final Widget screen;
   final Color blockColor;
   final Color textColor;
+  final bool isAuth;
 
-  const StackBlock({super.key, required this.title, required this.screen, required this.blockColor, required this.textColor});
+  const StackBlock({super.key, required this.title, required this.screen, required this.blockColor, required this.textColor, required this.isAuth});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+      onTap: () async {
+        if (isAuth) {
+          final user = await Auth().loginwithGoogle();
+                if (user != null) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+                }
+        } else {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+        }
       },
       child: SizedBox(
         height: 100,
