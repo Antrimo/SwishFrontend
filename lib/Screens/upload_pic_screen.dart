@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
+import 'package:swish/Screens/gender_screen.dart';
 import 'package:swish/Theme/color.dart';
 
 class UploadPicScreen extends StatelessWidget {
@@ -39,6 +40,7 @@ class UploadPicScreen extends StatelessWidget {
               screen: const UploadPicScreen(),
               blockColor: splashScreen,
               textColor: Colors.white, isAuth: false,
+              height: 58, width: 280,
             ),
           ),
           
@@ -49,7 +51,15 @@ class UploadPicScreen extends StatelessWidget {
               SizedBox(width: 5),
               Icon(Icons.camera_enhance),
             ],
-          )
+          ),
+
+          StackBlock(
+              title: 'Continue',
+              screen: const GenderScreen(),
+              blockColor: splashScreen,
+              textColor: Colors.white, isAuth: false,
+              height: 58, width: 280,
+            ),
         ],
       ),
     );
