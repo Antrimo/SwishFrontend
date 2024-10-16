@@ -42,6 +42,7 @@ class SplashScreen extends StatelessWidget {
               textColor: Colors.black,
               title: "Let's Get Started",
               screen: SignInScreen(), isAuth: false,
+               height: 58, width: 218,
             ),
           ],
         ),

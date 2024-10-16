@@ -49,7 +49,7 @@ class EnterCodeScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            Center(child: StackBlock(title: 'Continue', screen: const UploadPicScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false,)),
+            Center(child: StackBlock(title: 'Continue', screen: const UploadPicScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false,height: 58, width: 218,)),
             
           ],
         ),
