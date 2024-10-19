@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swish/Components/Blocks/code_block.dart';
+import 'package:swish/Components/Blocks/dob_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
 import 'package:swish/Screens/upload_pic_screen.dart';
 import 'package:swish/Theme/color.dart';
@@ -40,16 +40,16 @@ class EnterCodeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            const Row(
               children: [
-                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
-                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
-                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
-                CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                // CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                // CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                // CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
+                // CodeBlock(blockColor: splashScreen, textColor: Colors.white, digit: '8',),
               ],
             ),
             const SizedBox(height: 20),
-            Center(child: StackBlock(title: 'Continue', screen: const UploadPicScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false,height: 58, width: 218,)),
+            Center(child: StackBlock(title: 'Continue', screen: const UploadPicScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false,height: 58, width: 218, isFunction: false, isWidth: false,)),
             
           ],
         ),

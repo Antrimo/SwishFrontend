@@ -1,8 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:swish/Components/Blocks/slider_block.dart';
-import 'package:swish/Screens/birthday_screen.dart';
-import 'package:swish/Screens/gender_screen.dart';
 import 'package:swish/Screens/splash_screen.dart';
 import 'package:swish/firebase_options.dart';
 
@@ -26,7 +23,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:  const BirthdayScreen(),
+        home:  const SplashScreen(),
       ),
     );
   }

@@ -1,42 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:swish/API/api.dart';
-import 'package:swish/Auth/auth.dart';
 
-class StackBlock extends StatelessWidget {
-  final String title;
-  final Widget screen;
+
+class PictureBlock extends StatelessWidget {
   final double height;
   final double width;
   final Color blockColor;
   final Color textColor;
-  final bool isAuth;
-  final bool isFunction;
-  final bool isWidth;
+  final Icon icon;
 
 
 
 
-  const StackBlock({super.key, required this.title, required this.screen, required this.blockColor, required this.textColor, required this.isAuth, required this.height, required this.width, required this.isFunction, required this.isWidth,});
+  const PictureBlock({super.key, required this.blockColor, required this.textColor,  required this.height, required this.width, required this.icon, });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        if (isAuth) {
-          final user = await Auth().loginwithGoogle();
-                if (user != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
-                }
-        } else {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
-        }
-        isFunction ? Api().sendData() : null;
+       
         
       },
       child: Center(
         child: SizedBox(
-          height: 100,
-          width: isWidth ? 250 : 300,
+          height: 180,
+          width: 150,
           child: Center(
             child: Stack(
               children: [
@@ -68,12 +55,8 @@ class StackBlock extends StatelessWidget {
                       color: blockColor,
                       border: Border.all(width: 2, color: Colors.black),
                     ),
-                    child: Center(
-                      child: Text(
-                        title,
-                        style: TextStyle(fontSize: 16,color: textColor),
-                      ),
-                    ),
+                    child: icon, 
+                    
                   ),
                 ),
               ],

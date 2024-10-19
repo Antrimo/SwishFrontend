@@ -63,7 +63,7 @@ class _GenderScreenState extends State<GenderScreen> {
             },
           ),
           const SizedBox(height: 20),
-          StackBlock(title: 'Done', screen: const InterestedScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280)
+          StackBlock(title: 'Done', screen: const InterestedScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280, isFunction: false, isWidth: false,)
         ],
       ),
     );
