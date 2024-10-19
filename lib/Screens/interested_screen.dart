@@ -65,7 +65,7 @@ class _InterestedScreenState extends State<InterestedScreen> {
             },
           ),
           const SizedBox(height: 20),
-          StackBlock(title: 'Done', screen: const BirthdayScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280)
+          StackBlock(title: 'Done', screen: const BirthdayScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280, isFunction: false, isWidth: false,)
         ],
       ),
     );

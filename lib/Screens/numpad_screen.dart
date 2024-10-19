@@ -48,7 +48,7 @@ class NumpadScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             
-            Center(child: StackBlock(title: 'Continue', screen: const EnterCodeScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 218,)),
+            Center(child: StackBlock(title: 'Continue', screen: const EnterCodeScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 218, isFunction: false, isWidth: false,)),
           ],
         ),
       ),
