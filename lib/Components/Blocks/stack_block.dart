@@ -13,10 +13,27 @@ class StackBlock extends StatelessWidget {
   final bool isFunction;
   final bool isWidth;
 
+  final String gender;
+  final String preferredGender;
+  final String birthDate;
+  final int heightValue;
 
-
-
-  const StackBlock({super.key, required this.title, required this.screen, required this.blockColor, required this.textColor, required this.isAuth, required this.height, required this.width, required this.isFunction, required this.isWidth,});
+  const StackBlock({
+    super.key,
+    required this.title,
+    required this.screen,
+    required this.blockColor,
+    required this.textColor,
+    required this.isAuth,
+    required this.height,
+    required this.width,
+    required this.isFunction,
+    required this.isWidth,
+    this.gender = "Unknown",
+    this.preferredGender = "Unknown",
+    this.birthDate = "00-00-0000",
+    this.heightValue = 0,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +41,17 @@ class StackBlock extends StatelessWidget {
       onTap: () async {
         if (isAuth) {
           final user = await Auth().loginwithGoogle();
-                if (user != null) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
-                }
+          if (user != null) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => screen));
+          }
         } else {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => screen));
         }
-        isFunction ? Api().sendData() : null;
-        
+        isFunction
+            ? Api().sendData(gender, preferredGender, birthDate, heightValue)
+            : null;
       },
       child: Center(
         child: SizedBox(
@@ -71,7 +91,7 @@ class StackBlock extends StatelessWidget {
                     child: Center(
                       child: Text(
                         title,
-                        style: TextStyle(fontSize: 16,color: textColor),
+                        style: TextStyle(fontSize: 16, color: textColor),
                       ),
                     ),
                   ),

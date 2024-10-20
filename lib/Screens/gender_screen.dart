@@ -63,7 +63,20 @@ class _GenderScreenState extends State<GenderScreen> {
             },
           ),
           const SizedBox(height: 20),
-          StackBlock(title: 'Done', screen: const InterestedScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280, isFunction: false, isWidth: false,)
+          StackBlock(
+            title: 'Done', screen: const InterestedScreen(),
+            blockColor: splashScreen,
+            textColor: Colors.white,
+            isAuth: false,
+            height: 58,
+            width: 280,
+            isFunction: true,
+            isWidth: false,
+            gender: selectedGender ?? "Unknown", // Pass the selected gender
+            preferredGender: "Unknown", // Set preferred gender as needed
+            birthDate: "0000-00-00", // Default or calculated birth date
+            heightValue: 0,
+          )
         ],
       ),
     );

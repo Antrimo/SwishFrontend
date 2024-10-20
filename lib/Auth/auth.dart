@@ -30,36 +30,33 @@ class Auth {
         await sendTokenToBackend(idToken!);
       }
 
-      final googleAuth = await googleUser.authentication; 
+      final googleAuth = await googleUser.authentication;
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
       return await _fireAuth.signInWithCredential(credential);
-    }catch (e) {
+    } catch (e) {
       print(e);
       return null;
     }
   }
 
-
-
-
   Future<void> sendTokenToBackend(String token) async {
-  final response = await http.post(
-    Uri.parse('https://limitless-sea-53782-1344bc525592.herokuapp.com/auth/verifyToken'),
-    headers: <String, String>{
-      'Content-Type': 'application/json', 
-    },
-    body: jsonEncode(<String, String>{ 
-      'idToken': token,
-    }),
-  );
-  if (response.statusCode == 200) {
-    print("Token successfully sent to backend.");
-  } else {
-    print("Failed to send token. Error: ${response.body}");
+    final response = await http.post(
+      Uri.parse(
+          'https://limitless-sea-53782-1344bc525592.herokuapp.com/auth/verifyToken'),
+      headers: <String, String>{
+        'Content-Type': 'application/json',
+      },
+      body: jsonEncode(<String, String>{
+        'idToken': token,
+      }),
+    );
+    if (response.statusCode == 200) {
+      print("Token successfully sent to backend.");
+    } else {
+      print("Failed to send token. Error: ${response.body}");
+    }
   }
-}
-
 }

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:swish/Components/Blocks/interest_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
@@ -13,7 +12,6 @@ class InterestedScreen extends StatefulWidget {
 }
 
 class _InterestedScreenState extends State<InterestedScreen> {
-
   String? selectedGender;
 
   @override
@@ -65,7 +63,21 @@ class _InterestedScreenState extends State<InterestedScreen> {
             },
           ),
           const SizedBox(height: 20),
-          StackBlock(title: 'Done', screen: const BirthdayScreen(), blockColor: splashScreen, textColor: Colors.white, isAuth: false, height: 58, width: 280, isFunction: false, isWidth: false,)
+          StackBlock(
+            title: 'Done', screen: const BirthdayScreen(),
+            blockColor: splashScreen,
+            textColor: Colors.white,
+            isAuth: false,
+            height: 58,
+            width: 280,
+            isFunction: true,
+            isWidth: false,
+            gender: "Unknown", // Pass the selected gender
+            preferredGender:
+                selectedGender ?? "Unknown", // Set preferred gender as needed
+            birthDate: "0000-00-00", // Default or calculated birth date
+            heightValue: 0,
+          )
         ],
       ),
     );
