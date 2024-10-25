@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:swish/Screens/splash_screen.dart';
+import 'package:swish/Screens/upload_pic_screen.dart';
 import 'package:swish/firebase_options.dart';
 
 void main() async{
@@ -19,11 +20,10 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:  const SplashScreen(),
+        home:  const UploadPicScreen(),
       ),
     );
   }

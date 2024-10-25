@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-class PictureBlock extends StatelessWidget {
+class PictureBlock extends StatefulWidget {
   final double height;
   final double width;
   final Color blockColor;
@@ -13,6 +13,11 @@ class PictureBlock extends StatelessWidget {
 
   const PictureBlock({super.key, required this.blockColor, required this.textColor,  required this.height, required this.width, required this.icon, });
 
+  @override
+  State<PictureBlock> createState() => _PictureBlockState();
+}
+
+class _PictureBlockState extends State<PictureBlock> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,8 +36,8 @@ class PictureBlock extends StatelessWidget {
                   left: 10,
                   top: 20,
                   child: Container(
-                    height: height,
-                    width: width,
+                    height: widget.height,
+                    width: widget.width,
                     color: Colors.black,
                   ),
                 ),
@@ -40,8 +45,8 @@ class PictureBlock extends StatelessWidget {
                   left: 15,
                   top: 15,
                   child: Container(
-                    height: height,
-                    width: width,
+                    height: widget.height,
+                    width: widget.width,
                     color: Colors.black,
                   ),
                 ),
@@ -49,13 +54,13 @@ class PictureBlock extends StatelessWidget {
                   left: 20,
                   top: 10,
                   child: Container(
-                    height: height,
-                    width: width,
+                    height: widget.height,
+                    width: widget.width,
                     decoration: BoxDecoration(
-                      color: blockColor,
+                      color: widget.blockColor,
                       border: Border.all(width: 2, color: Colors.black),
                     ),
-                    child: icon, 
+                    child: widget.icon, 
                     
                   ),
                 ),
