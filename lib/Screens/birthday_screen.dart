@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swish/API/api.dart';
+import 'package:swish/API/api_basicdetails.dart';
 import 'package:swish/Components/Blocks/dob_block.dart';
 import 'package:swish/Components/Blocks/slider_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';

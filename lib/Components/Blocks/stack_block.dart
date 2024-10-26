@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:swish/API/api.dart';
+import 'package:swish/API/api_basicdetails.dart';
 import 'package:swish/Auth/auth.dart';
 
 class StackBlock extends StatelessWidget {
