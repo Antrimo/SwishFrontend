@@ -41,31 +41,49 @@ class _UploadPicScreenState extends State<UploadPicScreen> {
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(color: splashScreen, width: 2),
                 ),
-                child: _selectedImage == null
-                    ? Center(
-                        child: IconButton(
-                          onPressed: () async {
-                            FilePickerResult? result =
-                                await FilePicker.platform.pickFiles(
-                              type: FileType.custom,
-                              allowedExtensions: ['png', 'jpeg', 'jpg'],
-                            );
-                            if (result != null && result.files.single.path != null){
-                              setState(() {
-                                _selectedImage = File(result.files.single.path!);
-                              });
-                            }
-                          },
-                          icon: const Icon(Icons.add_a_photo),
+                child: GestureDetector(
+                  onTap: () async {
+                    FilePickerResult? result =
+                        await FilePicker.platform.pickFiles(
+                      type: FileType.custom,
+                      allowedExtensions: ['png', 'jpeg', 'jpg'],
+                    );
+                    if (result != null && result.files.single.path != null) {
+                      setState(() {
+                        _selectedImage = File(result.files.single.path!);
+                      });
+                    }
+                  },
+                  child: _selectedImage == null
+                      ? Center(
+                          child: IconButton(
+                            onPressed: () async {
+                              FilePickerResult? result =
+                                  await FilePicker.platform.pickFiles(
+                                type: FileType.custom,
+                                allowedExtensions: ['png', 'jpeg', 'jpg'],
+                              );
+                              if (result != null &&
+                                  result.files.single.path != null) {
+                                setState(() {
+                                  _selectedImage =
+                                      File(result.files.single.path!);
+                                });
+                              }
+                            },
+                            icon: const Icon(Icons.add_a_photo),
+                          ),
+                        )
+                      : ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.file(
+                            _selectedImage!,
+                            fit: BoxFit.cover,
+                            width: 298,
+                            height: 297,
+                          ),
                         ),
-                      )
-                    : ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.file(
-                          _selectedImage!,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
+                ),
               ),
             ),
             const SizedBox(height: 10),
