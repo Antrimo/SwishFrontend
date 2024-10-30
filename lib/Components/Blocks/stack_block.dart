@@ -18,6 +18,9 @@ class StackBlock extends StatelessWidget {
   final String birthDate;
   final int heightValue;
 
+  // New parameter for custom API callback
+  final Future<bool> Function()? apiCallback;
+
   const StackBlock({
     super.key,
     required this.title,
@@ -33,6 +36,7 @@ class StackBlock extends StatelessWidget {
     this.preferredGender = "Unknown",
     this.birthDate = "00-00-0000",
     this.heightValue = 0,
+    this.apiCallback, // initialize the callback
   });
 
   @override
@@ -41,17 +45,24 @@ class StackBlock extends StatelessWidget {
       onTap: () async {
         if (isAuth) {
           final user = await Auth().loginwithGoogle();
-          if (user != null) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => screen));
+          if (user == null) return;
+        }
+        bool shouldNavigate = true;
+
+        if (isFunction) {
+          if (apiCallback != null) {
+            // Call the custom API function if provided
+            shouldNavigate = await apiCallback!();
+          } else {
+            // Default API call if no custom function is provided
+            await ApiBasicdetails()
+                .sendData(gender, preferredGender, birthDate, heightValue);
           }
-        } else {
+        }
+        if (shouldNavigate) {
           Navigator.push(
               context, MaterialPageRoute(builder: (context) => screen));
         }
-        isFunction
-            ? Api().sendData(gender, preferredGender, birthDate, heightValue)
-            : null;
       },
       child: Center(
         child: SizedBox(

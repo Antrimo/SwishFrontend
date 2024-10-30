@@ -10,7 +10,7 @@ final TextEditingController dayController = TextEditingController();
 final TextEditingController monthController = TextEditingController();
 final TextEditingController yearController = TextEditingController();
 
-class Api {
+class ApiBasicdetails {
   Future<void> sendData(String gender, String preferredGender, String birthDate,
       int height) async {
     print("Sending data:");

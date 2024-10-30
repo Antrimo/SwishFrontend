@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +8,7 @@ class PictureBlock extends StatefulWidget {
   final Color blockColor;
   final Color textColor;
   final Icon icon;
+  final Function(File) onImageSelected; // New callback function
 
   const PictureBlock({
     super.key,
@@ -17,6 +17,7 @@ class PictureBlock extends StatefulWidget {
     required this.height,
     required this.width,
     required this.icon,
+    required this.onImageSelected, // Initialize callback
   });
 
   @override
@@ -24,7 +25,7 @@ class PictureBlock extends StatefulWidget {
 }
 
 class _PictureBlockState extends State<PictureBlock> {
-    File? _selectedImage;
+  File? _selectedImage;
 
   Future<void> _pickImage() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
@@ -35,8 +36,10 @@ class _PictureBlockState extends State<PictureBlock> {
       setState(() {
         _selectedImage = File(result.files.single.path!);
       });
+      widget.onImageSelected(_selectedImage!); // Call callback with selected image
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -77,14 +80,14 @@ class _PictureBlockState extends State<PictureBlock> {
                       border: Border.all(width: 2, color: Colors.black),
                     ),
                     child: _selectedImage == null
-                    ? widget.icon
-                    : ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.zero),
-                      child: Image.file(
-                        _selectedImage!,
-                        fit: BoxFit.cover,
-                      ),
-                    )
+                        ? widget.icon
+                        : ClipRRect(
+                            borderRadius: const BorderRadius.all(Radius.zero),
+                            child: Image.file(
+                              _selectedImage!,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
                   ),
                 ),
               ],

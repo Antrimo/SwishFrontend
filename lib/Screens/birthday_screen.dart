@@ -121,7 +121,7 @@ class _BirthdayScreenState extends State<BirthdayScreen> {
               String year =
                   yearController.text.isNotEmpty ? yearController.text : "2000";
               String birthDate = "$year-$month-$day";
-              Api().sendData("Unknown", "Unknown", birthDate,
+              ApiBasicdetails().sendData("Unknown", "Unknown", birthDate,
                   height.toInt()); // Replace with actual height value
             },
             child: const Text('Send Data'),
