@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:swish/Components/Blocks/map_block.dart';
 import 'package:swish/Components/Blocks/stack_block.dart';
-import 'package:swish/Components/dummy.dart';
+import 'package:swish/Screens/finding_match.dart';
 import 'package:swish/Theme/color.dart';
 
 class FindMeDateScreen extends StatefulWidget {
@@ -51,7 +51,7 @@ class _FindMeDateScreenState extends State<FindMeDateScreen> {
             const MapBlock(blockColor: Colors.white, height: 400, width: 300),
             StackBlock(
               title: 'Find me a Date!',
-              screen: const Dummy(),
+              screen: const FindingMatch(),
               blockColor: splashScreen,
               textColor: Colors.white,
               isAuth: false,
